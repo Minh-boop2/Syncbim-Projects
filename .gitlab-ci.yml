@@ -1,0 +1,58 @@
+variables:
+  PROJECT_PATH: C:\Users\Administrator\vtcode\syncbim_landingpage
+  REG_URL: registry.syncbim.com:6079
+  DOCKERIMAGE: ${REG_URL}/${CI_PROJECT_NAME}:${CI_COMMIT_SHORT_SHA}
+stages:
+  - sync
+  - build
+  - cleanup
+  - docker
+
+sync:
+  stage: sync
+  script:
+    - cd $PROJECT_PATH
+    - git config --global --add safe.directory $PROJECT_PATH
+    - git pull origin main
+  tags:
+    - sb-runner
+  only:
+    - main
+
+build:
+  stage: build
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - cd $PROJECT_PATH
+    - npm install
+    - npm run build
+  tags:
+    - sb-runner
+  only:
+    - main
+
+cleanup:
+  stage: cleanup
+  tags:
+    - sb-runner
+  only:
+    - tags
+  script:
+    - docker image prune -f
+
+docker:
+  stage: docker
+  variables:
+    GIT_STRATEGY: none
+  tags:
+    - sb-runner
+  only:
+    - tags
+  before_script:
+    - cd $PROJECT_PATH
+    - docker login ${REG_URL} -u syncbim -p 123
+  script:
+    - $env:IMAGENAME=${DOCKERIMAGE}
+    - docker compose build
+    - docker push $DOCKERIMAGE

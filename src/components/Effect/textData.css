@@ -1,0 +1,23 @@
+.text1 {
+	--s: 0.1em; /* Độ dày của gạch dưới */
+	--c: lightblue; /* Màu của gạch dưới */
+
+	color: #0000; /* chữ ẩn để dùng background clip */
+	padding-bottom: var(--s);
+	background:
+		linear-gradient(90deg, var(--c) 50%, #ffffff 0) calc(100% - var(--_p, 0%)) /
+			200% 100%,
+		linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+
+	-webkit-background-clip: text, padding-box;
+	background-clip: text, padding-box;
+	transition: 0.3s;
+	font-family: system-ui, sans-serif;
+	font-size: 5rem;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.text1:hover {
+	--_p: 100%;
+}

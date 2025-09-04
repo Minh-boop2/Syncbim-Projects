@@ -1,0 +1,13 @@
+{
+    "apps": [
+      {
+        "name": "landing-page",
+        "script": "node_modules/vite/dist/node/cli.js",
+        "args": "preview",
+        "merge_logs": false,
+        "instances": 1,
+        "exec_mode": "fork"
+      }
+    ]
+  }
+  

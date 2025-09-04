@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3b77b8;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #10355e;
+      }
+
+      .cls-3 {
+        fill: #194b82;
+      }
+
+      .cls-4 {
+        fill: #4d4e50;
+      }
+
+      .cls-5 {
+        fill: #f2f2f2;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <circle class="cls-5" cx="50" cy="50" r="48.75"/>
+      <path class="cls-4" d="M50,2.5c26.19,0,47.5,21.31,47.5,47.5s-21.31,47.5-47.5,47.5S2.5,76.19,2.5,50,23.81,2.5,50,2.5M50,0C22.39,0,0,22.39,0,50s22.39,50,50,50,50-22.39,50-50S77.61,0,50,0h0Z"/>
+    </g>
+    <g id="Axonometric_Cube" data-name="Axonometric Cube">
+      <polygon id="Cube_face_-_top" data-name="Cube face - top" class="cls-1" points="50 50.55 22.5 34.69 50 18.83 77.5 34.69 50 50.55"/>
+      <polygon id="Cube_face_-_left" data-name="Cube face - left" class="cls-2" points="50 81.17 22.5 65.31 22.5 34.69 50 50.55 50 81.17"/>
+      <polygon id="Cube_face_-_right" data-name="Cube face - right" class="cls-3" points="77.5 65.31 50 81.17 50 50.55 77.5 34.69 77.5 65.31"/>
+    </g>
+  </g>
+</svg>

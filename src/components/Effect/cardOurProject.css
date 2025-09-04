@@ -1,0 +1,202 @@
+/* Base style for all cards */
+.card1,
+.card2,
+.card3,
+.card4,
+.card5 {
+	position: relative;
+
+	background-color: #000;
+	border: 1px solid #333;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+/* ===== CARD 1 – Hồng ===== */
+.card1:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+}
+
+.card1::before,
+.card1::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 2px solid;
+	pointer-events: none;
+}
+
+.card1::before {
+	top: 0;
+	left: 0;
+	border-color: #ec4899 transparent transparent #ec4899;
+	border-top-left-radius: 12px;
+}
+
+.card1::after {
+	bottom: 0;
+	right: 0;
+	border-color: transparent #ec4899 #ec4899 transparent;
+	border-bottom-right-radius: 12px;
+	/* 8px */
+}
+
+/* ===== CARD 2 – Cam ===== */
+.card2:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 0 15px rgba(249, 115, 22, 0.4);
+}
+
+.card2::before,
+.card2::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 2px solid;
+	pointer-events: none;
+}
+
+.card2::before {
+	top: 0;
+	left: 0;
+	border-color: #f97316 transparent transparent #f97316;
+	border-top-left-radius: 12px;
+}
+
+.card2::after {
+	bottom: 0;
+	right: 0;
+	border-color: transparent #f97316 #f97316 transparent;
+	border-bottom-right-radius: 12px;
+}
+
+/* ===== CARD 3 – Xanh lam ===== */
+.card3:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.card3::before,
+.card3::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 2px solid;
+	pointer-events: none;
+}
+
+.card3::before {
+	top: 0;
+	left: 0;
+	border-color: #3b82f6 transparent transparent #3b82f6;
+	border-top-left-radius: 12px;
+}
+
+.card3::after {
+	bottom: 0;
+	right: 0;
+	border-color: transparent #3b82f6 #3b82f6 transparent;
+	border-bottom-right-radius: 12px;
+}
+
+/* ===== CARD 4 – Vàng ===== */
+.card4:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 0 15px rgba(250, 204, 21, 0.4);
+}
+
+.card4::before,
+.card4::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 2px solid;
+	pointer-events: none;
+}
+
+.card4::before {
+	top: 0;
+	left: 0;
+	border-color: #facc15 transparent transparent #facc15;
+	border-top-left-radius: 12px;
+}
+
+.card4::after {
+	bottom: 0;
+	right: 0;
+	border-color: transparent #facc15 #facc15 transparent;
+	border-bottom-right-radius: 12px;
+}
+
+/* ===== CARD 5 – Xanh lá ===== */
+.card5:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+}
+
+.card5::before,
+.card5::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 2px solid;
+	pointer-events: none;
+}
+
+.card5::before {
+	top: 0;
+	left: 0;
+	border-color: #22c55e transparent transparent #22c55e;
+	border-top-left-radius: 12px;
+}
+
+.card5::after {
+	bottom: 0;
+	right: 0;
+	border-color: transparent #22c55e #22c55e transparent;
+	border-bottom-right-radius: 12px;
+}
+.card1 .status-icon,
+.card2 .status-icon,
+.card3 .status-icon,
+.card4 .status-icon,
+.card5 .status-icon {
+	animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes slideUp {
+	0% {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5 {
+	animation: slideUp 1s ease-out;
+}

@@ -1,0 +1,26 @@
+.text7 {
+	/* QUAN TRỌNG: bỏ fill */
+	color: transparent !important;
+	-webkit-text-fill-color: transparent; /* Safari/WebKit */
+	-webkit-text-stroke: 4px #207086;
+
+	font-variation-settings:
+		"wght" 900,
+		"ital" 1;
+	transition:
+		font-variation-settings 1s,
+		text-shadow 1s;
+}
+.text7:hover {
+	font-variation-settings:
+		"wght" 100,
+		"ital" 0;
+	text-shadow: none;
+
+	text-shadow:
+		10px 10px 0 #07bccc,
+		15px 15px 0 #e601c0,
+		20px 20px 0 #e9019a,
+		25px 25px 0 #f40468,
+		45px 45px 10px #482896;
+}

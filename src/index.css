@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+/* New fonts */
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		/* Biến cũ - giữ nguyên */
+		--text: #2a3042;
+		--background: #f8f8fb;
+		--primary: #485ec4;
+		--secondary: #636678;
+		--accent: #50a5f1;
+		--clr_stroke: #dddddd;
+
+		/* Biến mới cho theme light */
+		--bg: #f8fafc; /* nền chính */
+		--surface: #ffffff; /* bề mặt thẻ/footer */
+		--text-strong: #0f172a; /* chữ chính */
+		--muted: #64748b; /* chữ phụ */
+		--border: #e2e8f0; /* viền */
+		--primary-light: #0ea5e9; /* xanh biển sáng */
+		--primary-strong: #2563eb; /* xanh biển đậm */
+	}
+
+	[data-theme="dark"] {
+		/* Biến cũ - giữ nguyên */
+		--text: #bec4d5;
+		--background: #040406;
+		--primary: #3b51b5;
+		--secondary: #868a9c;
+		--accent: #0e64af;
+		--clr_stroke: #26242c;
+
+		/* Biến mới cho theme dark */
+		--bg: #0b1220; /* nền chính */
+		--surface: #111827; /* bề mặt thẻ/footer */
+		--text-strong: #f1f5f9; /* chữ chính */
+		--muted: #94a3b8; /* chữ phụ */
+		--border: #1f2937; /* viền */
+		--primary-light: #38bdf8; /* xanh biển sáng hơn */
+		--primary-strong: #60a5fa; /* xanh biển đậm hơn */
+	}
+
+	:root {
+		--font-sora: "Sora", sans-serif;
+		--font-code: "Source Code Pro", monospace;
+		--font-grot: "Space Grotesk", sans-serif;
+		--font-oleo: "Oleo Script", sans-serif;
+		--font-jetb: "JetBrains Mono", sans-serif;
+		--font-robo: "Roboto";
+		--font-sand: "Quicksand", sans-serif;
+		/* --font-mont: "Montserrat", sans-serif; */
+		color-scheme: dark;
+	}
+	body {
+		font-family: "Poppins", sans-serif;
+	}
+
+	* {
+		scroll-behavior: smooth;
+		/* add more */
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	body::-webkit-scrollbar {
+		/* Chiều rộng của toàn bộ thanh cuộn */
+		width: 0.5rem;
+	}
+	body::-webkit-scrollbar-track {
+		/* Màu sắc của vùng theo dõi thanh cuộn */
+		background: transparent;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		/* Màu sắc của thanh cuộn */
+		background: #4c5474;
+		border-radius: 5px;
+		transition: 0.3s;
+	}
+}
+/* chữ gọn – bớt cảm giác “nhiều chữ quá” */
+.benefit-text {
+	/* tương đương text-sm ~ 15px, line-height dễ đọc */
+	font-size: 0.95rem;
+	line-height: 1.6;
+	font-weight: 500;
+}
+
+@layer components {
+	/* .backToTop {
+		@apply transition-all duration-200 font-semibold flex mx-auto items-center space-x-2 justify-center rounded-lg text-[15px] p-2 hover:scale-125 fixed right-[1.25rem] bottom-[15px] cursor-pointer z-[999] bg-n-9/40 border-n-1/10 backdrop-blur border;
+	} */
+}
+
+@layer utilities {
+}
+
+@layer base {
+	body {
+		@apply bg-n-1 font-sans text-base text-n-8 dark:bg-n-8 dark:text-n-1;
+	}
+}
+
+.rotate-45 {
+	@apply rotate-[45deg];
+}
+
+.rotate-90 {
+	@apply rotate-[90deg];
+}
+
+.rotate-135 {
+	@apply rotate-[135deg];
+}
+
+.rotate-180 {
+	@apply rotate-[180deg];
+}
+
+.rotate-225 {
+	@apply rotate-[225deg];
+}
+
+.rotate-270 {
+	@apply rotate-[270deg];
+}
+
+.rotate-315 {
+	@apply rotate-[315deg];
+}
+
+.rotate-360 {
+	@apply rotate-[360deg];
+}
+
+.-rotate-45 {
+	@apply rotate-[-45deg];
+}
+
+.-rotate-90 {
+	@apply rotate-[-90deg];
+}
+
+.-rotate-135 {
+	@apply rotate-[-135deg];
+}
+
+.-rotate-180 {
+	@apply rotate-[-180deg];
+}
+
+.-rotate-225 {
+	@apply rotate-[-225deg];
+}
+
+.-rotate-270 {
+	@apply rotate-[-270deg];
+}
+
+.-rotate-315 {
+	@apply rotate-[-315deg];
+}
+
+.-rotate-360 {
+	@apply rotate-[-360deg];
+}

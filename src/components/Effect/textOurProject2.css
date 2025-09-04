@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&display=swap");
+
+.text2 {
+	font-family: "Barlow Semi Condensed", sans-serif !important;
+	font-size: 5em !important;
+	text-transform: uppercase;
+	line-height: 1;
+	color: transparent !important;
+	-webkit-text-stroke: 1.5px purple !important;
+	text-shadow: 0 0 0 #fff !important;
+	transition: all 250ms;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+}
+
+.text2:hover {
+	text-shadow: 4px 4px 0 #fff !important;
+	transform: translate(-2px, -2px);
+}

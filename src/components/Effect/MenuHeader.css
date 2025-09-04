@@ -1,0 +1,25 @@
+.ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.ul li {
+	position: relative;
+	padding: 0.25em 0.5em;
+	cursor: pointer;
+}
+.ul li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 3px;
+	background: #ce4f20;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.3s ease;
+}
+.ul li:hover::before {
+	transform: scaleX(1);
+}

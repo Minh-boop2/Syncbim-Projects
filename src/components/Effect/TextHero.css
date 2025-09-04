@@ -1,0 +1,35 @@
+.text8 {
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 4px solid #3b82f6;
+	width: 0;
+	animation:
+		typing 3s steps(28, end) forwards,
+		blink 0.75s step-end infinite;
+	animation-fill-mode: forwards;
+}
+
+.text8.finished {
+	border-right: none; /* tắt caret */
+	animation: none;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 28ch;
+	} /* 28 ký tự */
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #3b82f6;
+	}
+}

@@ -1,0 +1,24 @@
+.text4 {
+	font-family: "Josefin Sans", sans-serif;
+	text-transform: uppercase;
+	display: inline-block;
+
+	/* gradient text */
+	background: linear-gradient(to right, #095fab 10%, #25abe8 50%, #57d75b 60%);
+	background-size: 200% auto;
+	-webkit-background-clip: text;
+	background-clip: text;
+
+	/* cho mọi trình duyệt */
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+
+	animation: textclip4 1.5s linear infinite;
+	will-change: background-position; /* tối ưu nhẹ */
+}
+
+@keyframes textclip4 {
+	to {
+		background-position: 200% center;
+	}
+}
