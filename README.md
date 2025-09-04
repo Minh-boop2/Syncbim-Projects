@@ -24,7 +24,7 @@ npm install
 Nếu bạn chạy không được tìm thư mục vite.config.js copy dòng này
 
 ```bash
-// vite.config.js
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import fs from "fs";
@@ -34,7 +34,7 @@ const hasCert = fs.existsSync("ssl/certificate.crt");
 
 export default defineConfig({
   plugins: [react()],
-  // base: "/Syncbim-Projects/", // nếu dùng GitHub Pages
+
   server:
     hasKey && hasCert
       ? {
