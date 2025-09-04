@@ -23,7 +23,8 @@ npm install
 **Chạy dự án**
 Nếu bạn chạy không được tìm thư mục vite.config.js copy dòng này
 
-
+```bash
+// vite.config.js
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import fs from "fs";
@@ -32,22 +33,25 @@ const hasKey = fs.existsSync("ssl/private.key");
 const hasCert = fs.existsSync("ssl/certificate.crt");
 
 export default defineConfig({
-	plugins: [react()],
-	
-	server:
-		hasKey && hasCert
-			? {
-					https: {
-						key: fs.readFileSync("ssl/private.key"),
-						cert: fs.readFileSync("ssl/certificate.crt"),
-					},
-					host: true,
-				}
-			: {
-					https: false, // <- chạy HTTP bình thường khi thiếu cert
-					host: true,
-				},
+  plugins: [react()],
+  // base: "/Syncbim-Projects/", // nếu dùng GitHub Pages
+  server:
+    hasKey && hasCert
+      ? {
+          https: {
+            key: fs.readFileSync("ssl/private.key"),
+            cert: fs.readFileSync("ssl/certificate.crt"),
+          },
+          host: true,
+        }
+      : {
+          https: false, // <- chạy HTTP bình thường khi thiếu cert
+          host: true,
+        },
 });
+
+```
+
 
 
 
