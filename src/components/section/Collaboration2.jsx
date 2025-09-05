@@ -185,8 +185,8 @@ const Collaboration = () => {
 						Triển khai cộng tác
 					</h3>
 					{/* ----- Carousel ngay trong Collaboration2 ----- */}
-					<div className="mx-auto mt-5 w-full max-w-2xl md:w-[27rem] md:max-w-4xl">
-						<div className="relative h-80 overflow-hidden rounded-3xl border border-white/15 shadow-lg md:h-[24rem] lg:h-[24rem]">
+					<div className="z-10 mx-auto mt-5 w-full max-w-2xl md:w-[34rem] md:max-w-4xl">
+						<div className="relative z-10 h-80 overflow-hidden rounded-3xl border border-white/15 shadow-lg md:h-[24rem] lg:h-[24rem]">
 							{/* Track */}
 							<div
 								ref={trackRef}
@@ -202,7 +202,7 @@ const Collaboration = () => {
 								{ext.map((s, i) => (
 									<div
 										key={i}
-										className="relative h-full w-full flex-[0_0_100%] overflow-hidden"
+										className="relative z-10 h-full w-full flex-[0_0_100%] overflow-hidden"
 									>
 										{/* KHUNG SLIDE (bo góc theo container) */}
 										<div className="absolute inset-0">
@@ -246,7 +246,7 @@ const Collaboration = () => {
 					</div>
 					{/* ----- Carousel kết thúc ----- */}
 					{/* button liên hệ */}
-					<div className="mt-10 translate-x-[7.5rem] md:mt-0 md:translate-x-[9rem] md:translate-y-[1rem]">
+					<div className="mt-10 translate-x-[7.5rem] md:mt-0 md:translate-x-[14rem] md:translate-y-[1rem]">
 						<button
 							type="button"
 							onClick={() => scrollToId("contact")}
@@ -262,7 +262,7 @@ const Collaboration = () => {
 					</div>
 				</div>
 				{/* hình tròn */}
-				<div className="mt-4 lg:ml-auto xl:w-[38rem]">
+				<div className="mt-4 md:mt-0 md:-translate-y-8 lg:ml-auto xl:w-[38rem]">
 					<p className="body-2 mb-8 text-n-8 dark:text-n-1 md:mb-16 lg:mx-auto lg:mb-32 lg:w-[22rem]"></p>
 					<div className="relative mx-auto flex aspect-square w-[22rem] scale-75 rounded-full border border-white/10 shadow-[inset_0_0_40px_rgba(59,130,246,0.15)] dark:border-white/10 md:scale-100">
 						<div className="m-auto flex aspect-square w-60 rounded-full border border-stroke-dark/50 dark:border-stroke-light/40">

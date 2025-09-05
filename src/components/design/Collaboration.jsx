@@ -17,14 +17,14 @@ export const RightCurve = () => {
 
 export const LeftCurve = () => {
 	return (
-		<div className="pointer-events-none absolute right-full top-1/2 -mt-1 mr-10 hidden w-[32.625rem] xl:block">
+		<div className="pointer-events-none absolute right-full top-1/2 -z-10 -mt-1 mr-10 hidden w-[32.625rem] xl:block">
 			<img
 				src={curve1}
 				width={522}
 				height={182}
 				alt="Curve 1"
 				draggable="false"
-				className="dark:contrast-110 block h-auto w-full select-none opacity-60 dark:opacity-90 dark:brightness-125 dark:invert"
+				className="dark:contrast-110 -z-10 block h-auto w-full select-none opacity-60 dark:opacity-90 dark:brightness-125 dark:invert"
 			/>
 		</div>
 	);
