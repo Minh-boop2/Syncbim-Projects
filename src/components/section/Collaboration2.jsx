@@ -16,16 +16,27 @@ const Collaboration = () => {
 	const trackRef = useRef(null);
 	const timerRef = useRef(null);
 
-	const scrollToId = (id) => {
+	const scrollToId = (id, headerOffset = 0) => {
 		const el = document.getElementById(id);
 		if (!el) return;
-		// nếu người dùng bật "giảm chuyển động" thì bỏ smooth
-		const smooth = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-			? "auto"
-			: "smooth";
-		el.scrollIntoView({ behavior: smooth, block: "start" });
-	};
 
+		const prefersReduce = window.matchMedia(
+			"(prefers-reduced-motion: reduce)",
+		).matches;
+		const rect = el.getBoundingClientRect();
+
+		const targetY =
+			window.scrollY +
+			rect.top +
+			rect.height / 2 -
+			window.innerHeight / 2 -
+			headerOffset;
+
+		window.scrollTo({
+			top: Math.max(0, targetY),
+			behavior: prefersReduce ? "auto" : "smooth",
+		});
+	};
 	const handleEnter = () => {
 		const el = orbitRef.current;
 		if (!el) return;
@@ -171,11 +182,11 @@ const Collaboration = () => {
 			<div className="container lg:flex">
 				<div className="max-w-[25rem]">
 					<h3 className="text1 h3 mb-4 inline font-semibold text-gray-800 dark:text-white md:mb-8">
-						Triển khai cộng tác liền mạch
+						Triển khai cộng tác
 					</h3>
 					{/* ----- Carousel ngay trong Collaboration2 ----- */}
-					<div className="mx-auto mt-5 w-full max-w-2xl">
-						<div className="relative h-56 overflow-hidden rounded-2xl border border-white/15 shadow-lg md:h-64 lg:h-72">
+					<div className="mx-auto mt-5 w-full max-w-2xl md:w-[27rem] md:max-w-4xl">
+						<div className="relative h-80 overflow-hidden rounded-3xl border border-white/15 shadow-lg md:h-[24rem] lg:h-[24rem]">
 							{/* Track */}
 							<div
 								ref={trackRef}
@@ -235,11 +246,11 @@ const Collaboration = () => {
 					</div>
 					{/* ----- Carousel kết thúc ----- */}
 					{/* button liên hệ */}
-					<div className="mt-10 translate-x-[7.5rem] md:mt-0 md:translate-x-[10rem] md:translate-y-[2rem]">
+					<div className="mt-10 translate-x-[7.5rem] md:mt-0 md:translate-x-[9rem] md:translate-y-[1rem]">
 						<button
 							type="button"
 							onClick={() => scrollToId("contact")}
-							className="group relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/30 ring-1 ring-white/10 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:translate-y-0.5 dark:from-cyan-400 dark:to-blue-500 dark:shadow-cyan-400/30 dark:ring-white/10 dark:hover:brightness-110"
+							className="group relative inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-400 to-indigo-400 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/30 ring-1 ring-white/10 transition-all duration-300 hover:scale-125 hover:shadow-xl hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:translate-y-0.5 dark:from-cyan-400 dark:to-blue-500 dark:shadow-cyan-400/30 dark:ring-white/10 dark:hover:brightness-110 md:scale-105"
 							aria-label="Liên hệ"
 						>
 							<span className="relative">

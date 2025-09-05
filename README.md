@@ -52,9 +52,6 @@ export default defineConfig({
 
 ```
 
-
-
-
 ```bash
 
 npm run dev
